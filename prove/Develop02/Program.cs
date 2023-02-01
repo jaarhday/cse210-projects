@@ -5,6 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        List<string> Journal = new List<string>();
         string userInput = "";
         while (userInput != "5"){
             Console.WriteLine("Please select one of the following choices:");
@@ -17,10 +18,13 @@ class Program
             userInput = Console.ReadLine();
             if (userInput == "1"){
                 write entry = new write();
-                entry.Write();
+                entry._prompt = entry.getPrompt();
+                entry._jEntry = entry.getEntry();
+                entry._dateTime = entry.getDate();
+                
             }
             else if (userInput == "2"){
-
+                
             }
             else if (userInput == "3"){
 

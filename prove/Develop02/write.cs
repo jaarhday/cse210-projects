@@ -1,7 +1,8 @@
 public class write{
-    public string jEntry = "";
-    public string dateTime = "";
-    public List<string> Journal = new List<string>();
+    public string _jEntry = ""; //stores the entry
+    public string _dateTime = ""; //stores the date
+    public string _prompt = ""; // the prompt string that stores the prompt
+    //public List<string> Journal = new List<string>();
     public string[] Prompts = {
     "The most terrifying moment of my life was: ",
     "The most fun I’ve ever had: ",
@@ -22,19 +23,43 @@ public class write{
 
     public write(){
     }
-    public void Display(){
-        foreach (string line in Journal){
-            Console.WriteLine(line);
-        }
-    }
-    public void Write(){
+    
+    public string getPrompt(){
         int random_number = new Random().Next(1, 16);
+        _prompt = Prompts[random_number];
+        return _prompt;
+    }
+    public string getEntry(){
+        Console.WriteLine(_prompt);
+        Console.Write("> ");
+        _jEntry = Console.ReadLine();
+        return _jEntry;
+    }
+    public string getDate(){
+        DateTime theCurrentTime = DateTime.Now;
+        _dateTime = theCurrentTime.ToShortDateString();
+        return _dateTime;
+    }
+
+    /*public List<string> Write(){
+        int random_number = new Random().Next(1, 16);
+        prompt = Prompts[random_number];
         DateTime theCurrentTime = DateTime.Now;
         string dateText = theCurrentTime.ToShortDateString();
-        Console.WriteLine(Prompts[random_number]);
+        Console.WriteLine(prompt);
         Console.Write("> ");
         jEntry = Console.ReadLine();
         Journal.Add(dateText);
+        Journal.Add(prompt);
         Journal.Add(jEntry);
-    }
+        foreach (string line in Journal){
+            Console.WriteLine(line);
+        }
+        return Journal;
+    }*/
+    /*public void Display(){
+        foreach (string line in Journal){
+            Console.WriteLine(line);
+        }
+    }*/
 }
