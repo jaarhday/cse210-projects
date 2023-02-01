@@ -1,7 +1,9 @@
 public class save{
-    public List<write> _saveFiles = new List<write>();
+    public List<string> _saveFiles = new List<string>();
 
-    public void Save(){
-        
+    public void Display(){
+        /*foreach (string line in _saveFiles){
+            Console.WriteLine(line);
+        }*/
     }
 }

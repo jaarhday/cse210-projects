@@ -24,7 +24,8 @@ class Program
                 
             }
             else if (userInput == "2"){
-                
+                save jSave = new save();
+                jSave._saveFiles.Add(Journal.ToString());
             }
             else if (userInput == "3"){
 
