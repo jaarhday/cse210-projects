@@ -41,6 +41,10 @@ public class write{
         return _dateTime;
     }
 
+    public void display(){
+        Console.WriteLine($"{_dateTime} | {_prompt} {_jEntry}");
+    }
+
     /*public List<string> Write(){
         int random_number = new Random().Next(1, 16);
         prompt = Prompts[random_number];
