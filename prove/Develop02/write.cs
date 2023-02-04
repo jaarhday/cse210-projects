@@ -1,8 +1,8 @@
-public class write{
+public class write{ // I know that the class name needs to be capitalized but I am too lazy to
     public string _jEntry = ""; //stores the entry
     public string _dateTime = ""; //stores the date
     public string _prompt = ""; // the prompt string that stores the prompt
-    //public List<string> Journal = new List<string>();
+    // List of the prompts
     public string[] Prompts = {
     "The most terrifying moment of my life was: ",
     "The most fun I’ve ever had: ",
@@ -23,7 +23,8 @@ public class write{
 
     public write(){
     }
-    
+    // I split this up to make it easier for me to comprehend. I think this makes the display
+    // function more complicated
     public string getPrompt(){
         int random_number = new Random().Next(1, 16);
         _prompt = Prompts[random_number];
@@ -41,7 +42,7 @@ public class write{
         return _dateTime;
     }
 
-    public void display(){
+    public void display(){ // debugger thingy
         Console.WriteLine($"{_dateTime} | {_prompt} {_jEntry}");
     }
 
