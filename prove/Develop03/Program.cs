@@ -17,8 +17,8 @@ class Program
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine(refer.getReference());
-                Console.WriteLine(scripture.getText());
+                Console.WriteLine(refer.GetReference());
+                Console.WriteLine(scripture.GetText());
 
                 Console.WriteLine("\nPress enter to hide more words or type quit to exit:");
                 string input = Console.ReadLine();
@@ -29,7 +29,7 @@ class Program
                 }
                 //if (scripture.hiddenWords.Count == text.Length) //tried to make it exit when all the spaces are dashes, but I could not figure it out :/
                 //Console.WriteLine(scripture.hideWords());
-                scripture.hideWords();
+                scripture.HideWords();
             }
         }
 }

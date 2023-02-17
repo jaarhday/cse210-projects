@@ -6,7 +6,7 @@ public class Scripture{
         this._text = text;
     }
 
-    public string getText(){
+    public string GetText(){
         return _text;
     }
 }

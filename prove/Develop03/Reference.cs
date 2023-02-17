@@ -5,7 +5,7 @@ public class Reference{
         this._refer = reference;
     }
 
-    public string getReference(){
+    public string GetReference(){
         return _refer;
     }
 }

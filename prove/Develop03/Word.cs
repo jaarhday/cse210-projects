@@ -1,22 +1,21 @@
 public class Words{
-    private string reference;
-    private string text;
-    private bool[] hiddenWords;
+    private string _text;
+    private bool[] _hiddenWords;
 
     public Words(string text)
     {
-        this.text = text;
-        this.hiddenWords = new bool[text.Split(' ').Length];
+        this._text = text;
+        this._hiddenWords = new bool[text.Split(' ').Length];
     }
 
-    public string getText()
+    public string GetText()
     {
-        string[] words = text.Split(' ');
+        string[] words = _text.Split(' ');
         string displayedText = "";
 
         for (int i = 0; i < words.Length; i++)
         {
-            if (!hiddenWords[i])
+            if (!_hiddenWords[i])
             {
                 displayedText += words[i] + " ";
             }
@@ -29,11 +28,11 @@ public class Words{
         return displayedText.Trim();
     }
 
-    public void hideWords()
+    public void HideWords()
     {
         Random random = new Random();
-        int wordIndex = random.Next(0, text.Split(' ').Length);
+        int wordIndex = random.Next(0, _text.Split(' ').Length);
 
-        hiddenWords[wordIndex] = true;
+        _hiddenWords[wordIndex] = true;
     }
 }
