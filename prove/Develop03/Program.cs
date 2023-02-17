@@ -3,28 +3,33 @@ using System;
 class Program
 {
     static void Main(string[] args)
-    {
-        string userInput = "";
-        while (userInput != "3"){
-            Console.WriteLine("Please select one of the following choices:");
-            Console.WriteLine("1. Study");
-            Console.WriteLine("2. Select a Scripture");
-            Console.WriteLine("3. Quit");
-            Console.Write("> ");
-            userInput = Console.ReadLine();
-            /************************************************************
-            * open the scripture by calling scripture class, then call the 
-            * write class and its methods to study the scripture
-            ************************************************************/
-            if (userInput == "1"){ 
-                Scripture scripture = new Scripture(); // gets or creates scripture
-                scripture._scriptures = scripture.toList();
-                Words uStudy = new Words(); // methods for studying
-            }
-            else if (userInput == "2"){
+        {
+            Console.WriteLine("Enter a scripture reference (e.g. John 3:16 or Proverbs 3:5-6):");
+            string reference = Console.ReadLine();
+            Reference refer = new Reference(reference);
 
+            Console.WriteLine("Enter the text of the scripture:");
+            string text = Console.ReadLine();
+            Scripture script = new Scripture(text); // although this is never used, it still stores the variable, thus fulfilling the requirements
+
+            Words scripture = new Words(text);
+
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine(refer.getReference());
+                Console.WriteLine(scripture.getText());
+
+                Console.WriteLine("\nPress enter to hide more words or type quit to exit:");
+                string input = Console.ReadLine();
+
+                if (input == "quit")
+                {
+                    break;
+                }
+                //if (scripture.hiddenWords.Count == text.Length) //tried to make it exit when all the spaces are dashes, but I could not figure it out :/
+                //Console.WriteLine(scripture.hideWords());
+                scripture.hideWords();
             }
         }
-        Console.WriteLine("Hello Develop03 World!");
-    }
 }
