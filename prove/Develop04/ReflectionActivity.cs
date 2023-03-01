@@ -1,5 +1,7 @@
 public class ReflectionActivity{
     private int _duration;
+    private string _activityName = "Reflection Activity";
+    private string _description = "";
     private string[] _prompts = {
         "Think of a time when you stood up for someone else.",
         "Think of a time when you did something really difficult.",
