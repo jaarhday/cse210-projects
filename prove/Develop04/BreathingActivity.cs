@@ -8,33 +8,43 @@ public class BreathingActivity{
         ActivityManager act1 = new ActivityManager(_activityName, _description);
         act1.sMessage();
         this._duration = act1.getDuration();
+        int loops = 0;
+        if (_duration > 10){
+            loops = _duration/10;
+        }
+        else {
+            loops = 1;
+        }
+        Console.WriteLine(loops);
 
         while (true){
-            _duration = _duration - 1;
+            loops = loops - 1;
             //Console.WriteLine(_duration);
             Console.Clear();
             Console.WriteLine("Breath in...");
             for (int i = 0; i < 5; i++){
-                Console.WriteLine(".");
+                Console.Write($"{i+1}");
                 Thread.Sleep(1000);
+                Console.Write("\b \b");
             }
             Console.Clear();
             Console.WriteLine("Breath out...");
             for (int i = 0; i < 5; i++){
-                Console.WriteLine(".");
+                Console.Write($"{i+1}");
                 Thread.Sleep(1000);
+                Console.Write("\b \b");
             }
             Console.Clear();
-            if (_duration > 1){
-                Console.WriteLine($"{_duration} more times before completion");
-                act1.sleepyTime();
+            if (loops > 1){
+                Console.WriteLine($"{loops} more times before completion");
+                Thread.Sleep(1000);
             }
-            else if (_duration == 1){
+            else if (loops == 1){
                 Console.WriteLine("One more time");
-                act1.sleepyTime();
+                Thread.Sleep(1000);
             }
-            if (_duration == 0){
-                act1.eMessage();
+            if (loops == 0){
+                act1.eMessage(_duration);
                 break;
             }
         }
