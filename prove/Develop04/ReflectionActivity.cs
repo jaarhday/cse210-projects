@@ -56,7 +56,7 @@ public class ReflectionActivity{
         Console.WriteLine(_prompts[r_Prompt]);
         act2.sleepyTime(_duration);
         Console.WriteLine(_reflections[r_Reflection]);
-        act2.sleepyTime(_duration);
-        act2.eMessage(_duration);*/
+        act2.sleepyTime(_duration);*/
+        act2.eMessage(_duration);
     }
 }
